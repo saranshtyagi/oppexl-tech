@@ -95,7 +95,7 @@ function Home() {
     },
     {
       id: 'magic-quadrant',
-      title: "Gartner's 2024 Magic Quadrant Report",
+      title: "2024 Magic Quadrant Report",
       image: '/magic-quadrant.png',
       snippet: 'A look at the top players in the HCM software space, and why they matter.',
       link: '/insights/magic-quadrant',
@@ -240,7 +240,7 @@ function Home() {
         },
         {
           number: '+200',
-          label: 'Courses Completed',
+          label: 'Audits Completed',
           icon: <TrendingUp sx={{ fontSize: 40, color: '#3b82f6' }} />,
         },
         {
