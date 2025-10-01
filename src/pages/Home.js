@@ -50,16 +50,19 @@ function Home() {
       icon: <MonetizationOn fontSize="large" sx={{ color: '#0ba5e9' }} />,
       title: 'Job Portal',
       description: 'Seamless hiring process with resume parsing and smart scheduling.',
+      path: '/products/job-portal'
     },
     {
       icon: <People fontSize="large" sx={{ color: '#10b981' }} />,
       title: 'LMS',
       description: 'Upskill employees through interactive and gamified training modules.',
+      path: '/products/lms'
     },
     {
       icon: <CheckCircle fontSize="large" sx={{ color: '#ec4899' }} />,
       title: 'HRMS',
       description: 'Automate HR operations, payroll, and compliance effortlessly.',
+      path: '/products/hrms'
     }
   ];
 
@@ -155,7 +158,7 @@ function Home() {
                   <Box sx={{ mb: 2 }}>{item.icon}</Box>
                   <Typography variant="h6" gutterBottom>{item.title}</Typography>
                   <Typography variant="body2" paragraph>{item.description}</Typography>
-                  <Button size="small">Learn more →</Button>
+                  <Button size="small" href={item.path}>Learn more →</Button>
                 </Card>
               </Grid>
             ))}

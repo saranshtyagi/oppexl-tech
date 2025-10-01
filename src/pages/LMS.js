@@ -18,7 +18,7 @@ function LMS() {
   return (
     <>
       <Box sx={{ height: 64 }} />
-      <Container sx={{ py: 6 }}>
+      <Container sx={{ py: 10 }}>
         <Typography variant="h4" gutterBottom>Learning Management System (LMS)</Typography>
 
         <Grid container spacing={4}>
@@ -46,18 +46,6 @@ function LMS() {
                 </ListItem>
               ))}
             </List>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Box
-              component="iframe"
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="LMS Demo"
-              frameBorder="0"
-              allowFullScreen
-            />
           </Grid>
         </Grid>
 

@@ -17,7 +17,7 @@ function JobPortal() {
   return (
     <>
       <Box sx={{ height: 64 }} />
-      <Container sx={{ py: 6 }}>
+      <Container sx={{ py: 10 }}>
         <Typography variant="h4" gutterBottom>Job Portal</Typography>
 
         <Grid container spacing={4}>
@@ -49,17 +49,6 @@ function JobPortal() {
             </List>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Box
-              component="iframe"
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/Z1BCujX3pw8"
-              title="Job Portal Demo"
-              frameBorder="0"
-              allowFullScreen
-            />
-          </Grid>
         </Grid>
 
         <Typography variant="h5" sx={{ mt: 6, mb: 2 }}>
