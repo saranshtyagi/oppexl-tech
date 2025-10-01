@@ -4,7 +4,7 @@ import { People, TrendingUp, School, Psychology } from '@mui/icons-material';
 
 function TalentManagement() {
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
+    <Container maxWidth="lg" sx={{ py: 18 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           Talent Management

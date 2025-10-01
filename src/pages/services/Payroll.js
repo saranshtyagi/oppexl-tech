@@ -4,7 +4,7 @@ import { AccountBalance, Receipt, Security, Speed } from '@mui/icons-material';
 
 function Payroll() {
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
+    <Container maxWidth="lg" sx={{ py: 18 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           Payroll

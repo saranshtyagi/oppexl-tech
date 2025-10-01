@@ -4,7 +4,7 @@ import { AttachMoney, CardGiftcard, TrendingUp, Balance } from '@mui/icons-mater
 
 function CompensationBenefits() {
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
+    <Container maxWidth="lg" sx={{ py: 18 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           Compensation Benefits & Rewards
