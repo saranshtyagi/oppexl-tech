@@ -17,15 +17,16 @@ function Header() {
     {
       key: 'about',
       label: 'About Us',
+      path: '/about',
       items: [
         { label: 'Mission & Vision', path: '/about/mission' },
         { label: 'Leadership', path: '/about/leadership' },
-        { label: 'Careers', path: '/about/careers' },
       ],
     },
     {
       key: 'services',
       label: 'Our Services',
+      path: '/services',
       items: [
         { label: 'Merger & Acquisitions', path: '/services/merger-acquisitions' },
         { label: 'Audits', path: '/services/audits' },
@@ -39,6 +40,7 @@ function Header() {
     {
       key: 'products',
       label: 'Our Products',
+      path: 'products',
       items: [
         { label: 'HRMS', path: '/products/hrms' },
         { label: 'LMS', path: '/products/lms' },
@@ -48,12 +50,18 @@ function Header() {
     {
       key: 'contact',
       label: 'Contact Us',
+      path: '/contact',
       items: [
         { label: 'Email Us', path: '/contact/email' },
         { label: 'Call Us', path: '/contact/call' },
         { label: 'Visit Office', path: '/contact/office' },
       ],
     },
+    {
+      key: 'careers', 
+      label: 'Careers', 
+      path: '/about/careers', 
+    }
   ];
 
   const navItemStyle = {
@@ -124,18 +132,23 @@ function Header() {
         {/* Navigation */}
         <Box display="flex" alignItems="center" gap={3} position="relative">
 
-          {navMenus.map(({ key, label, items }) => (
+          {navMenus.map(({ key, label, path, items }) => (
             <Box
               key={key}
               onMouseEnter={() => setHoveredKey(key)}
               onMouseLeave={() => setHoveredKey(null)}
               sx={{ position: 'relative' }}
             >
-              <Button sx={navItemStyle}>
+              <Button
+                component={Link}
+                to={path}
+                sx={navItemStyle}
+                onClick={() => setHoveredKey(null)}
+              >
                 {label}
               </Button>
 
-              {hoveredKey === key && (
+              {hoveredKey === key && items && (
                 <Paper sx={dropdownStyle} elevation={4}>
                   {items.map(({ label, path }) => (
                     <Box

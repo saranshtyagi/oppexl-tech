@@ -20,11 +20,13 @@ import Leadership from './pages/about/Leadership';
 import Careers from './pages/about/Careers';
 
 // Layout Components
+import AboutUs from './pages/about/AboutUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ChatAssistant from './components/ChatAssistant';
 
 // Contact Pages
+import ContactUs from './pages/contact/ContactUs';
 import EmailUs from './pages/contact/EmailUs';
 import CallUs from './pages/contact/CallUs';
 import VisitOffice from './pages/contact/VisitOffice';
@@ -55,11 +57,13 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
 
         {/* About Us Pages */}
+        <Route path='/about' element={<AboutUs />} />
         <Route path="/about/mission" element={<Mission />} />
         <Route path="/about/leadership" element={<Leadership />} />
         <Route path="/about/careers" element={<Careers />} />
 
         {/* Contact Pages */}
+        <Route path='/contact' element={<ContactUs />} />
         <Route path="/contact/email" element={<EmailUs />} />
         <Route path="/contact/call" element={<CallUs />} />
         <Route path="/contact/office" element={<VisitOffice />} />
