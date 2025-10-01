@@ -31,7 +31,7 @@ function HRMS() {
       {/* Unified Workforce Section */}
       <Box sx={{ py: 18, bgcolor: '#e6f2fb' }}>
         <Container>
-          <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>Human Resource Management System (LMS)</Typography>
+          <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>Human Resource Management System (HRMS)</Typography>
           <Typography variant="h4" textAlign="center" fontWeight={500} gutterBottom>
             Streamlined Workforce, Maximum Output
           </Typography>

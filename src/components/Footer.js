@@ -121,8 +121,7 @@ function Footer() {
           {[
             {label: 'About Us', path: '/about'},
             {label: 'Careers', path: '/about/careers'},
-            {label: 'Contact', path: '/contact'},
-            {label: 'Privacy Policy', path:'/privacy-policy'}
+            {label: 'Contact Us', path: '/contact'}
           ].map((item) => (
             <Typography key={item.label} variant='body2'>
               <Link

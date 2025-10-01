@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SuccessStories from './pages/SuccessStories';
 
-import Insights from './pages/Insights'; // 👈 Add this with your other imports
+import Insights from './pages/Insights'; 
+import HrTrends from './pages/HrTrends';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -89,9 +90,10 @@ function App() {
 
        
       <Route path="/insights" element={<Insights />} />
+      <Route path='/insights/hr-trends' element={<HrTrends />} />
       </Routes>
       <Footer />
-      <ChatAssistant />
+      {/* <ChatAssistant /> */}
     </>
   );
 }

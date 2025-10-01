@@ -180,7 +180,7 @@ function Home() {
       title: 'Top 10 HR Tech Trends Report 2025',
       image: '/hr-trends.png',
       snippet: 'Explore the latest HR technology trends that will define 2025.',
-      link: '/insights/hr-trends-2025',
+      link: '/insights/hr-trends',
     },
     {
       id: 'performance-management',
@@ -325,7 +325,7 @@ function Home() {
             {insights.map((item, idx) => (
               <Grid item xs={12} sm={6} md={4} key={idx}>
                 <Card sx={{ borderRadius: 3, overflow: 'hidden', boxShadow: 2, display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <CardActionArea href={item.link} sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  <CardActionArea component={Link} to={item.link} sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                     <CardMedia component="img" height="180" image={item.image} alt={item.title} />
                     <CardContent sx={{ bgcolor: '#eaf3fb', flexGrow: 1, width: '100%' }}>
                       <Typography variant="body1" fontWeight={600}>{item.title}</Typography>
@@ -339,7 +339,7 @@ function Home() {
             ))}
           </Grid>
           <Box mt={5} textAlign="center">
-            <Button variant="contained" sx={{ bgcolor: '#002b54', borderRadius: 2 }} href="/insights" endIcon={<ArrowForward />}>
+            <Button variant="contained" sx={{ bgcolor: '#002b54', borderRadius: 2 }} component={Link} to="/insights" endIcon={<ArrowForward />}>
               View all from Oppexl Insights
             </Button>
           </Box>
@@ -400,7 +400,7 @@ function Home() {
 
 
       {/* Chat Button and Chat Box */}
-      <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 9999, display: 'flex', alignItems: 'center' }}>
+      {/* <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 9999, display: 'flex', alignItems: 'center' }}>
         <Typography variant="body1" sx={{ mr: 1 }}>Chat with Us</Typography>
         <Fab color="primary" onClick={handleChatToggle}><Chat /></Fab>
       </Box>
@@ -420,7 +420,8 @@ function Home() {
             <IconButton color="primary" onClick={handleSendMessage}><Send /></IconButton>
           </Box>
         </Box>
-      )}
+
+      )} */}
     </>
   );
 }
