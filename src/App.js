@@ -13,6 +13,7 @@ import LMS from './pages/LMS';
 import HRMS from './pages/HRMS';
 import JobPortal from './pages/JobPortal';
 import Blogs from './pages/Blogs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // About Us Pages
 import Mission from './pages/about/Mission';
@@ -79,6 +80,8 @@ function App() {
 
         {/* Success Stories */}
         <Route path="/success-stories" element={<SuccessStories />} />
+
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 
        
       <Route path="/insights" element={<Insights />} />
