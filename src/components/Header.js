@@ -115,13 +115,6 @@ function Header() {
 
         {/* Navigation */}
         <Box display="flex" alignItems="center" gap={3} position="relative">
-          <Button
-            component={Link}
-            to="/"
-            sx={navItemStyle}
-          >
-            Home
-          </Button>
 
           {navMenus.map(({ key, label, items }) => (
             <Box
