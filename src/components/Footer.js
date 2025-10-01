@@ -118,9 +118,21 @@ function Footer() {
         {/* Company */}
         <Grid item xs={6} md={2}>
           <Typography variant="h6" gutterBottom>Company</Typography>
-          {['About Us', 'Careers', 'Contact', 'Privacy Policy'].map((item) => (
-            <Typography key={item} variant="body2">
-              <Link href="#" underline="hover" color="inherit">{item}</Link>
+          {[
+            {label: 'About Us', path: '/about'},
+            {label: 'Careers', path: '/about/careers'},
+            {label: 'Contact', path: '/contact'},
+            {label: 'Privacy Policy', path:'/privacy-policy'}
+          ].map((item) => (
+            <Typography key={item.label} variant='body2'>
+              <Link
+                component={RouterLink}
+                to={item.path}
+                underline='hover'
+                color="inherit"
+              >
+                {item.label}
+              </Link>
             </Typography>
           ))}
         </Grid>
