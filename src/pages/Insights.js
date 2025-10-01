@@ -19,7 +19,7 @@ const insights = [
     title: 'Top 10 HR Tech Trends Report 2025',
     image: '/hr-trends.png',
     snippet: 'Explore the latest HR technology trends that will define 2025.',
-    link: '/insights/hr-trends-2025',
+    link: '/insights/hr-trends',
   },
   {
     id: 'performance-management',
@@ -28,18 +28,12 @@ const insights = [
     snippet: 'Discover how to align performance systems with evolving business goals.',
     link: '/insights/performance-management',
   },
-  {
-    id: 'magic-quadrant',
-    title: "Gartner's 2024 Magic Quadrant Report",
-    image: '/magic-quadrant.png',
-    snippet: 'A look at the top players in the HCM software space, and why they matter.',
-    link: '/insights/magic-quadrant',
-  }
+
 ];
 
 const Insights = () => {
   return (
-    <Box sx={{ py: 10, bgcolor: '#f8fbff', minHeight: '100vh' }}>
+    <Box sx={{ py: 14, bgcolor: '#f8fbff', minHeight: '100vh' }}>
       <Container>
         <Box sx={{ mb: 4 }}>
           <Button component={Link} to="/" startIcon={<ArrowBack />}>

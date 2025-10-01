@@ -4,6 +4,7 @@ import SuccessStories from './pages/SuccessStories';
 
 import Insights from './pages/Insights'; 
 import HrTrends from './pages/HrTrends';
+import PerformanceMgmt from './pages/PerformanceMgmt';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -91,6 +92,7 @@ function App() {
        
       <Route path="/insights" element={<Insights />} />
       <Route path='/insights/hr-trends' element={<HrTrends />} />
+      <Route path='/insights/performance-management' element={<PerformanceMgmt />} />
       </Routes>
       <Footer />
       {/* <ChatAssistant /> */}

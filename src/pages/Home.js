@@ -188,13 +188,6 @@ function Home() {
       snippet: 'Discover how to align performance systems with evolving business goals.',
       link: '/insights/performance-management',
     },
-    {
-      id: 'magic-quadrant',
-      title: "2024 Magic Quadrant Report",
-      image: '/magic-quadrant.png',
-      snippet: 'A look at the top players in the HCM software space, and why they matter.',
-      link: '/insights/magic-quadrant',
-    }
   ];
 
   return (
