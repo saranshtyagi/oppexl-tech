@@ -19,6 +19,7 @@ import {
   DialogContent,
   DialogActions
 } from '@mui/material';
+import Slider from 'react-slick';
 import { ArrowForward, CheckCircle, MonetizationOn, People, Chat, Send, TrendingUp, EmojiEmotions } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
@@ -45,26 +46,118 @@ function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const features = [
+  // const features = [
+  //   {
+  //     icon: <MonetizationOn fontSize="large" sx={{ color: '#0ba5e9' }} />,
+  //     title: 'Job Portal',
+  //     description: 'Seamless hiring process with resume parsing and smart scheduling.',
+  //     path: '/products/job-portal'
+  //   },
+  //   {
+  //     icon: <People fontSize="large" sx={{ color: '#10b981' }} />,
+  //     title: 'LMS',
+  //     description: 'Upskill employees through interactive and gamified training modules.',
+  //     path: '/products/lms'
+  //   },
+  //   {
+  //     icon: <CheckCircle fontSize="large" sx={{ color: '#ec4899' }} />,
+  //     title: 'HRMS',
+  //     description: 'Automate HR operations, payroll, and compliance effortlessly.',
+  //     path: '/products/hrms'
+  //   }
+  // ];
+  const featuresCarousel = [
     {
-      icon: <MonetizationOn fontSize="large" sx={{ color: '#0ba5e9' }} />,
-      title: 'Job Portal',
-      description: 'Seamless hiring process with resume parsing and smart scheduling.',
-      path: '/products/job-portal'
-    },
-    {
+      key: 'lms',
       icon: <People fontSize="large" sx={{ color: '#10b981' }} />,
       title: 'LMS',
       description: 'Upskill employees through interactive and gamified training modules.',
       path: '/products/lms'
     },
     {
+      key: 'hrms',
       icon: <CheckCircle fontSize="large" sx={{ color: '#ec4899' }} />,
       title: 'HRMS',
       description: 'Automate HR operations, payroll, and compliance effortlessly.',
       path: '/products/hrms'
+    },
+    {
+      key: 'job-portal',
+      icon: <MonetizationOn fontSize="large" sx={{ color: '#0ba5e9' }} />,
+      title: 'Job Portal',
+      description: 'Seamless hiring process with resume parsing and smart scheduling.',
+      path: '/products/job-portal'
+    },
+    {
+      key: 'mna',
+      icon: <TrendingUp fontSize="large" sx={{ color: '#3b82f6' }} />,
+      title: 'Merger & Acquisitions',
+      description: 'End-to-end M&A support from due diligence to post-merger integration.',
+      path: '/services/merger-acquisitions'
+    },
+    {
+      key: 'audits',
+      icon: <CheckCircle fontSize="large" sx={{ color: '#22c55e' }} />,
+      title: 'Audits',
+      description: 'Comprehensive HR and compliance audits to reduce operational risk.',
+      path: '/services/audits'
+    },
+    {
+      key: 'talent-management',
+      icon: <EmojiEmotions fontSize="large" sx={{ color: '#f59e0b' }} />,
+      title: 'Talent Management',
+      description: 'Performance, succession, and skill mapping for a stronger bench.',
+      path: '/services/talent-management'
+    },
+    {
+      key: 'comp-benefits-rewards',
+      icon: <MonetizationOn fontSize="large" sx={{ color: '#16a34a' }} />,
+      title: 'Compensation, Benefits & Rewards',
+      description: 'Design pay and benefits programs at scale.',
+      path: '/services/compensation-benefits'
+    },
+    {
+      key: 'recruitment',
+      icon: <People fontSize="large" sx={{ color: '#0ea5e9' }} />,
+      title: 'Recruitment',
+      description: 'Source, screen, and hire faster with AI-enabled workflows.',
+      path: '/services/recruitment'
+    },
+    {
+      key: 'payroll',
+      icon: <MonetizationOn fontSize="large" sx={{ color: '#8b5cf6' }} />,
+      title: 'Payroll',
+      description: 'Accurate, compliant, and timely payroll processing across regions.',
+      path: '/services/payroll'
+    },
+    {
+      key: 'gov-advisory',
+      icon: <TrendingUp fontSize="large" sx={{ color: '#dc2626' }} />,
+      title: 'Government Advisory',
+      description: 'Advisory for public-sector HCM modernization and compliance.',
+      path: '/services/government-advisory'
     }
   ];
+
+  const sliderSettings = {
+  dots: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  swipeToSlide: true,
+  autoplay: true,
+  autoplaySpeed: 3000,     // 3 seconds per slide
+  speed: 600,              // transition duration
+  pauseOnHover: false,     // do not stop on hover
+  pauseOnFocus: false,     // do not stop on focus
+  responsive: [
+    { breakpoint: 1200, settings: { slidesToShow: 3 } },
+    { breakpoint: 900,  settings: { slidesToShow: 2 } },
+    { breakpoint: 600,  settings: { slidesToShow: 1 } },
+  ],
+};
+
+
 
   const blogPosts = [
     {
@@ -146,7 +239,7 @@ function Home() {
       </Box>
 
       {/* Feature Cards Section */}
-      <Box sx={{ py: 10, bgcolor: 'white' }}>
+      {/* <Box sx={{ py: 10, bgcolor: 'white' }}>
         <Container>
           <Typography variant="h4" gutterBottom textAlign="center">
             Everything you need to create a high performance culture
@@ -163,6 +256,32 @@ function Home() {
               </Grid>
             ))}
           </Grid>
+        </Container>
+      </Box> */}
+      <Box sx={{ py: 10, bgcolor: 'white' }}>
+        <Container>
+          <Typography variant="h4" gutterBottom textAlign="center">
+            Everything you need to create a high performance culture
+          </Typography>
+
+          <Box sx={{ mt: 4 }}>
+            <Slider {...sliderSettings}>
+              {featuresCarousel.map((item) => (
+                <Box key={item.key} sx={{ px: 1.5 }}>
+                  <Card sx={{ p: 3, boxShadow: 3, height: '100%', minHeight: 220, display: 'flex', flexDirection: 'column' }}>
+                    <Box sx={{ mb: 2 }}>{item.icon}</Box>
+                    <Typography variant="h6" gutterBottom>{item.title}</Typography>
+                    <Typography variant="body2" paragraph sx={{ flexGrow: 1 }}>
+                      {item.description}
+                    </Typography>
+                    <Button size="small" component={Link} to={item.path} endIcon={<ArrowForward />}>
+                      Learn more
+                    </Button>
+                  </Card>
+                </Box>
+              ))}
+            </Slider>
+          </Box>
         </Container>
       </Box>
 

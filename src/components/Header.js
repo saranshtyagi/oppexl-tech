@@ -48,6 +48,11 @@ function Header() {
       ],
     },
     {
+      key: 'careers', 
+      label: 'Careers', 
+      path: '/about/careers', 
+    },
+    {
       key: 'contact',
       label: 'Contact Us',
       path: '/contact',
@@ -57,11 +62,6 @@ function Header() {
         { label: 'Visit Office', path: '/contact/office' },
       ],
     },
-    {
-      key: 'careers', 
-      label: 'Careers', 
-      path: '/about/careers', 
-    }
   ];
 
   const navItemStyle = {
