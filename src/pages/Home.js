@@ -284,7 +284,7 @@ function Home() {
             See Oppexl in Action
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            Discover how our platform can help streamline your HR and recruitment processes.
+            Discover how Oppexl can help transform your Human Capital.
           </Typography>
           <Button variant="contained" size="large" color="primary" onClick={handleOpen}>
             Book a Free Demo
