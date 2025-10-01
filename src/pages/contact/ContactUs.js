@@ -36,7 +36,7 @@ function ContactUs() {
                 <Box display="flex" alignItems="center" gap={2} mb={3}>
                     <Email fontSize="large" color="primary" />
                     <Typography variant="h6" fontWeight={500}>
-                      hr@oppexl.com
+                      support@oppexl.com
                     </Typography>
                 </Box>
         
