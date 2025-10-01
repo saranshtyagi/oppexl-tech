@@ -4,7 +4,7 @@ import SuccessStories from './pages/SuccessStories';
 
 import Insights from './pages/Insights'; // 👈 Add this with your other imports
 
-
+import ScrollToTop from './components/ScrollToTop';
 
 
 // Pages
@@ -42,6 +42,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
 
