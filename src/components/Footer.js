@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { Box, Grid, Typography, Link, IconButton } from '@mui/material';
 import OppexlLogo from '../OppexlLogo.png';
 import { Email, Phone, LocationOn, LinkedIn, Twitter, Facebook } from '@mui/icons-material';
@@ -59,11 +60,22 @@ function Footer() {
         </Grid>
 
         {/* Products */}
-        <Grid item xs={6} md={2}>
-          <Typography variant="h6" gutterBottom>Products</Typography>
-          {['HRMS', 'LMS', 'Job Portal'].map((item) => (
-            <Typography key={item} variant="body2">
-              <Link href="#" underline="hover" color="inherit">{item}</Link>
+        <Grid item xs = {6} md = {2}>
+          <Typography variant='h6' gutterBottom>Products</Typography>
+          {[
+            {label: 'HRMS', path: "/products/hrms"}, 
+            {label: 'LMS', path: "/products/lms"}, 
+            {label: 'Job Portal', path: "/products/job-portal"}
+          ].map((item) => (
+            <Typography key={item.label} variant='body2'>
+              <Link
+                component={RouterLink}
+                to={item.path}
+                underline='hover'
+                color="inherit"
+              >
+                {item.label}
+              </Link>
             </Typography>
           ))}
         </Grid>
