@@ -18,7 +18,7 @@ function HRMS() {
     'Learning & Growth': ['Onboarding Modules', 'Skill Gap Analysis', 'Gamified LMS'],
     'Performance Management': ['OKR Tracking', 'Continuous Feedback', 'Appraisal Workflows'],
     'Employee Engagement': ['Pulse Surveys', 'Rewards & Recognition', 'Wellness Programs'],
-    'HR Process Automation': ['Attendance Tracking', 'Leave Management', 'Payroll Processing']
+    'Payroll': ['Attendance Tracking', 'Leave Management', 'Payroll Processing']
   };
 
   return (
@@ -32,7 +32,7 @@ function HRMS() {
             Streamlined Workforce, Maximum Output
           </Typography>
           <Typography variant="subtitle1" textAlign="center" gutterBottom>
-            Streamline hiring, training, and operations from a single suite
+            Streamline Payroll, Hiring, Training and HR Operations.
           </Typography>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 6, gap: 2, flexWrap: 'wrap' }}>
