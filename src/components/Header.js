@@ -40,7 +40,7 @@ function Header() {
     {
       key: 'products',
       label: 'Our Products',
-      path: 'products',
+      path: '/products',
       items: [
         { label: 'HRMS', path: '/products/hrms' },
         { label: 'LMS', path: '/products/lms' },
@@ -48,9 +48,9 @@ function Header() {
       ],
     },
     {
-      key: 'careers', 
-      label: 'Careers', 
-      path: '/about/careers', 
+      key: 'careers',
+      label: 'Careers',
+      path: '/about/careers',
     },
     {
       key: 'contact',
@@ -62,7 +62,8 @@ function Header() {
         { label: 'Visit Office', path: '/contact/office' },
       ],
     },
-  ];
+];
+
 
   const navItemStyle = {
     textTransform: 'none',

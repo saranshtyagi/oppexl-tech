@@ -74,7 +74,7 @@ function HRMS() {
             </Grid>
           </Grid>
 
-          <Box textAlign="center" mt={6}>
+          <Box textAlign="center" mt={10}>
             <Button variant="contained" color="error" size="large">
               Get Started with HRMS 🚀
             </Button>
@@ -85,7 +85,7 @@ function HRMS() {
       <Container>
         
 
-        <Typography variant="h5" sx={{ mt: 6, mb: 2 }}>
+        <Typography variant="h5" sx={{ pb: 3 }}>
           Subscription Plans
         </Typography>
 
@@ -104,7 +104,7 @@ function HRMS() {
               desc: 'All modules, customization, dedicated account manager, 24/7 SLA'
             }
           ].map((plan, index) => (
-            <Grid item xs={12} sm={4} key={index}>
+            <Grid item xs={12} sm={4} key={index} pb={8}>
               <Card sx={{ bgcolor: '#f5f5f5', height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>{plan.name}</Typography>

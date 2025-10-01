@@ -14,6 +14,7 @@ import HRMS from './pages/HRMS';
 import JobPortal from './pages/JobPortal';
 import Blogs from './pages/Blogs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Products from './pages/Products';
 
 // About Us Pages
 import Mission from './pages/about/Mission';
@@ -33,6 +34,7 @@ import CallUs from './pages/contact/CallUs';
 import VisitOffice from './pages/contact/VisitOffice';
 
 // Services Pages
+import Services from './pages/services/Services';
 import MergerAcquisitions from './pages/services/MergerAcquisitions';
 import Audits from './pages/services/Audits';
 import TalentManagement from './pages/services/TalentManagement';
@@ -50,6 +52,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Product Pages */}
+        <Route path='/products' element={<Products />} />
         <Route path="/products/lms" element={<LMS />} />
         <Route path="/products/hrms" element={<HRMS />} />
         <Route path="/products/job-portal" element={<JobPortal />} />
@@ -70,6 +73,7 @@ function App() {
         <Route path="/contact/office" element={<VisitOffice />} />
 
         {/* Services Pages */}
+        <Route path='/services' element={<Services />} />
         <Route path="/services/merger-acquisitions" element={<MergerAcquisitions />} />
         <Route path="/services/audits" element={<Audits />} />
         <Route path="/services/talent-management" element={<TalentManagement />} />
