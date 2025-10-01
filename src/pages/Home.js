@@ -31,12 +31,16 @@ function Home() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [clientReady, setClientReady] = useState(false);
 
   const theme = useTheme();
   const isSmDown = useMediaQuery(theme.breakpoints.down('sm'));
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Keep original arrays/objects unchanged (using same variable names)
+  useEffect(() => {
+    setClientReady(true);
+  }, []);
+
   const featuresCarousel = [
     { key: 'lms', icon: <People fontSize="large" sx={{ color: '#10b981' }} />, title: 'LMS', description: 'Upskill employees through interactive and gamified training modules.', path: '/products/lms' },
     { key: 'hrms', icon: <CheckCircle fontSize="large" sx={{ color: '#ec4899' }} />, title: 'HRMS', description: 'Automate HR operations, payroll, and compliance effortlessly.', path: '/products/hrms' },
@@ -59,12 +63,15 @@ function Home() {
     autoplay: true,
     autoplaySpeed: 3000,
     speed: 600,
-    pauseOnHover: false,
+    pauseOnHover: true,
     pauseOnFocus: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
+    variableWidth: false,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 3 } },
       { breakpoint: 900, settings: { slidesToShow: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1 } },
+      { breakpoint: 600, settings: { slidesToShow: 1, infinite: false } },
     ],
   };
 
@@ -85,35 +92,37 @@ function Home() {
     },
   ];
 
-  // Seamless-ish loop helper without changing HTML structure (optional)
+  // Ref for video (native loop, no manual handlers needed)
   const videoRef = useRef(null);
+
+  // Force Slick to recalc width after mount and on viewport changes
+  const sliderRef = useRef(null);
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const onLoaded = () => {
+    const fix = () => {
       try {
-        if (v.currentTime === 0) v.currentTime = 0.03;
+        sliderRef.current?.slickGoTo(0);
+        sliderRef.current?.innerSlider?.onWindowResized?.();
       } catch {}
     };
-    const onEnded = () => {
-      try {
-        v.currentTime = 0.03;
-        v.play();
-      } catch {}
-    };
-    v.addEventListener('loadedmetadata', onLoaded);
-    v.addEventListener('ended', onEnded);
-    return () => {
-      v.removeEventListener('loadedmetadata', onLoaded);
-      v.removeEventListener('ended', onEnded);
-    };
-  }, []);
+    if (clientReady) {
+      const t1 = setTimeout(fix, 0);
+      const t2 = setTimeout(fix, 150);
+      window.addEventListener('orientationchange', fix);
+      window.addEventListener('resize', fix);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        window.removeEventListener('orientationchange', fix);
+        window.removeEventListener('resize', fix);
+      };
+    }
+  }, [clientReady]);
 
   return (
     <>
       <Toolbar />
 
-      {/* Hero Section (unchanged structure) */}
+      {/* Hero Section */}
       <Box sx={{ position: 'relative', height: { xs: '80vh', md: '100vh' }, overflow: 'hidden' }}>
         <video
           ref={videoRef}
@@ -136,7 +145,7 @@ function Home() {
           <source src="/videos/hero-video.mp4" type="video/mp4" />
         </video>
 
-        {/* Non-invasive contrast overlay for mobile legibility */}
+        {/* Overlay */}
         <Box
           sx={{
             position: 'absolute',
@@ -177,7 +186,7 @@ function Home() {
         </Box>
       </Box>
 
-      {/* Feature Cards Section (unchanged layout, animated in-view) */}
+      {/* Feature Cards Section */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'white' }}>
         <Container>
           <MotionTypography
@@ -199,42 +208,44 @@ function Home() {
             transition={{ duration: 0.45 }}
             sx={{ mt: 4 }}
           >
-            <Slider {...sliderSettings}>
-              {featuresCarousel.map((item) => (
-                <Box key={item.key} sx={{ px: 1.5 }}>
-                  <MotionCard
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.4 }}
-                    sx={{
-                      p: 3,
-                      boxShadow: 3,
-                      height: '100%',
-                      minHeight: 220,
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}
-                  >
-                    <Box sx={{ mb: 2 }}>{item.icon}</Box>
-                    <Typography variant="h6" gutterBottom>
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" paragraph sx={{ flexGrow: 1 }}>
-                      {item.description}
-                    </Typography>
-                    <Button size="small" component={Link} to={item.path} endIcon={<ArrowForward />}>
-                      Learn more
-                    </Button>
-                  </MotionCard>
-                </Box>
-              ))}
-            </Slider>
+            {clientReady && (
+              <Slider ref={sliderRef} {...sliderSettings}>
+                {featuresCarousel.map((item) => (
+                  <Box key={item.key} sx={{ px: 1.5 }}>
+                    <MotionCard
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.4 }}
+                      sx={{
+                        p: 3,
+                        boxShadow: 3,
+                        height: '100%',
+                        minHeight: 220,
+                        display: 'flex',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <Box sx={{ mb: 2 }}>{item.icon}</Box>
+                      <Typography variant="h6" gutterBottom>
+                        {item.title}
+                      </Typography>
+                      <Typography variant="body2" paragraph sx={{ flexGrow: 1 }}>
+                        {item.description}
+                      </Typography>
+                      <Button size="small" component={Link} to={item.path} endIcon={<ArrowForward />}>
+                        Learn more
+                      </Button>
+                    </MotionCard>
+                  </Box>
+                ))}
+              </Slider>
+            )}
           </MotionBox>
         </Container>
       </Box>
 
-      {/* Demo CTA Section (unchanged, responsive text) */}
+      {/* Demo CTA Section */}
       <Box sx={{ textAlign: 'center', py: { xs: 6, md: 10 }, bgcolor: '#f0f4f8', px: 1 }}>
         <Container>
           <MotionTypography
@@ -257,7 +268,7 @@ function Home() {
         </Container>
       </Box>
 
-      {/* Demo Form Dialog (unchanged) */}
+      {/* Demo Form Dialog */}
       <Dialog fullWidth maxWidth="sm" open={open} onClose={handleClose}>
         <DialogTitle>Book a Free Demo</DialogTitle>
         <DialogContent>
@@ -274,7 +285,7 @@ function Home() {
         </DialogActions>
       </Dialog>
 
-      {/* Insights Section (unchanged layout, animated headers/cards) */}
+      {/* Insights Section */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#f8fbff' }}>
         <Container>
           <MotionTypography
@@ -321,7 +332,7 @@ function Home() {
         </Container>
       </Box>
 
-      {/* Trusted by Growing Teams (unchanged, small responsive tweaks) */}
+      {/* Trusted by Growing Teams */}
       <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#f4f7fe' }}>
         <Container>
           <MotionTypography

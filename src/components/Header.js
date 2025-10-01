@@ -109,7 +109,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#002b54', width: '100vw' }}>
+    <AppBar position="fixed" sx={{ bgcolor: '#002b54', width: '100%' }}>
       <Toolbar
         sx={{
           display: 'flex',
