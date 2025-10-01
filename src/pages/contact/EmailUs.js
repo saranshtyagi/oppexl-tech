@@ -21,7 +21,7 @@ function EmailUs() {
           <Box display="flex" alignItems="center" gap={2} mb={3}>
             <Email fontSize="large" color="primary" />
             <Typography variant="h6" fontWeight={500}>
-              support@oppexl.com
+              <a href="mailto:support@oppexl.com">support@oppexl.com</a>
             </Typography>
           </Box>
 
