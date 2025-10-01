@@ -6,10 +6,6 @@ import {
   Box,
   Card,
   CardContent,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Button
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';

@@ -26,7 +26,7 @@ import Careers from './pages/about/Careers';
 import AboutUs from './pages/about/AboutUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ChatAssistant from './components/ChatAssistant';
+// import ChatAssistant from './components/ChatAssistant';
 
 // Contact Pages
 import ContactUs from './pages/contact/ContactUs';

@@ -4,7 +4,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import CloseIcon from '@mui/icons-material/Close';
 
 function ChatAssistant() {
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [open, setOpen] = useState(false);
 

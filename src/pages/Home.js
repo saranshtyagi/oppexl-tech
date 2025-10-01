@@ -10,37 +10,36 @@ import {
   Grid,
   Toolbar,
   Typography,
-  Fab,
-  Paper,
+  
   TextField,
-  IconButton,
+  
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions
 } from '@mui/material';
 import Slider from 'react-slick';
-import { ArrowForward, CheckCircle, MonetizationOn, People, Chat, Send, TrendingUp, EmojiEmotions } from '@mui/icons-material';
+import { ArrowForward, CheckCircle, MonetizationOn, People, TrendingUp, EmojiEmotions } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 
 function Home() {
-  const [chatOpen, setChatOpen] = useState(false);
-  const [chatMessage, setChatMessage] = useState('');
-  const [chatLog, setChatLog] = useState([
-    { from: 'bot', text: 'Hi! How can we help you today?' }
-  ]);
+  // const [chatOpen, setChatOpen] = useState(false);
+  // const [chatMessage, setChatMessage] = useState('');
+  // const [chatLog, setChatLog] = useState([
+  //   { from: 'bot', text: 'Hi! How can we help you today?' }
+  // ]);
 
-  const handleChatToggle = () => {
-    setChatOpen(prev => !prev);
-  };
+  // const handleChatToggle = () => {
+  //   setChatOpen(prev => !prev);
+  // };
 
-  const handleSendMessage = () => {
-    if (chatMessage.trim()) {
-      setChatLog([...chatLog, { from: 'user', text: chatMessage }]);
-      setChatMessage('');
-    }
-  };
+  // const handleSendMessage = () => {
+  //   if (chatMessage.trim()) {
+  //     setChatLog([...chatLog, { from: 'user', text: chatMessage }]);
+  //     setChatMessage('');
+  //   }
+  // };
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -159,20 +158,20 @@ function Home() {
 
 
 
-  const blogPosts = [
-    {
-      title: 'How to Choose the Right HRMS for Your Business',
-      snippet: 'Explore the key features to look for when selecting an HRMS for your organization.',
-    },
-    {
-      title: '5 Benefits of Implementing an LMS',
-      snippet: 'Learn how a learning management system can boost employee performance and retention.',
-    },
-    {
-      title: 'Streamline Your Hiring Process with Automation',
-      snippet: 'Discover how automation can save time and improve hiring quality.',
-    }
-  ];
+  // const blogPosts = [
+  //   {
+  //     title: 'How to Choose the Right HRMS for Your Business',
+  //     snippet: 'Explore the key features to look for when selecting an HRMS for your organization.',
+  //   },
+  //   {
+  //     title: '5 Benefits of Implementing an LMS',
+  //     snippet: 'Learn how a learning management system can boost employee performance and retention.',
+  //   },
+  //   {
+  //     title: 'Streamline Your Hiring Process with Automation',
+  //     snippet: 'Discover how automation can save time and improve hiring quality.',
+  //   }
+  // ];
 
   const insights = [
     {
@@ -228,7 +227,7 @@ function Home() {
                 Empowering Your Workforce with Technology
               </Typography>
               <Typography variant="body1" sx={{ mb: 3, color: 'black' }}>
-                Oppexl Technologies is your one stop solution for all human capital needs - HR Tech, Transformation, Audits and many more...
+                Oppexl Technologies is your one stop solution for all Human Capital needs - HR Tech, Transformation, Audits and many more...
               </Typography>
 
 
