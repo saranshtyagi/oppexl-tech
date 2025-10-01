@@ -123,15 +123,23 @@ function Header() {
         onMouseLeave={() => setHoveredKey(null)}
       >
         {/* Logo + Brand */}
-        <Box display="flex" alignItems="center" component={Link} to="/" sx={{ textDecoration: 'none' }}>
-          <img src={OppexlLogo} alt="Oppexl Logo" style={{ height: 48 }} />
+        <Box display="flex" alignItems="center" sx={{ textDecoration: 'none' }}>
+          <Link to="/">
+            <img src={OppexlLogo} alt="Oppexl Logo" style={{ height: 48 }} />
+          </Link>
           <Typography
             variant="h6"
-            sx={{ fontWeight: 'bold', fontSize: { xs: '1.4rem', md: '1.8rem' }, color: 'white', ml: 1 }}
+            sx={{
+              fontWeight: 'bold',
+              fontSize: { xs: '1.4rem', md: '1.8rem' },
+              color: 'white',
+              ml: 1
+            }}
           >
             Oppexl
           </Typography>
         </Box>
+
 
         {/* Desktop Navigation */}
         {!isMobile && (
