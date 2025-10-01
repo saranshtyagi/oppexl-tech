@@ -85,8 +85,7 @@ function LMS() {
     {
       name: "Starter",
       desc: "Up to 100 users, manual course creation, basic insights",
-      price: "Free trial",
-      cta: "Start Free",
+      cta: "Contact Sales",
       highlight: false,
       features: ["Course Builder", "Basic Quizzes", "Basic Reports", "Email Support"],
       icon: RocketLaunchRounded,
@@ -95,8 +94,7 @@ function LMS() {
     {
       name: "Growth",
       desc: "500+ users, analytics dashboard, certificates, mobile access",
-      price: "₹7,999 / mo",
-      cta: "Choose Growth",
+      cta: "Contact Sales",
       highlight: true,
       features: ["Advanced Quizzes + Certs", "Analytics Dashboard", "Mobile App Access", "RBAC + SSO"],
       icon: WorkspacePremiumRounded,
@@ -105,7 +103,6 @@ function LMS() {
     {
       name: "Enterprise",
       desc: "Unlimited users, SCORM/xAPI, integrations, 24/7 support",
-      price: "Custom",
       cta: "Contact Sales",
       highlight: false,
       features: ["SCORM/xAPI", "Custom Integrations", "Dedicated CSM", "24/7 Priority Support"],
@@ -313,10 +310,8 @@ function LMS() {
                     </Stack>
 
                     <Stack direction="row" alignItems="baseline" justifyContent="space-between" sx={{ mt: 1 }}>
-                      <Typography variant="h6" fontWeight={800}>
-                        {plan.price}
-                      </Typography>
                       <Button
+                        href="mailto:support@oppexl.com"
                         variant={plan.highlight ? "contained" : "outlined"}
                         color={plan.highlight ? "primary" : "inherit"}
                         sx={{ borderRadius: 2, textTransform: "none", fontWeight: 700 }}

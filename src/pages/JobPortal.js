@@ -84,8 +84,7 @@ function JobPortal() {
     {
       name: 'Basic',
       desc: 'Up to 10 job listings, manual screening, basic notifications',
-      price: 'Free trial',
-      cta: 'Start Free',
+      cta: 'Contact Sales',
       highlight: false,
       features: ['10 Listings', 'Basic ATS', 'Email Alerts', 'Email Support'],
       icon: RocketLaunchRounded,
@@ -94,8 +93,7 @@ function JobPortal() {
     {
       name: 'Professional',
       desc: '50 listings, smart screening, recruiter dashboards, automations',
-      price: '₹6,999 / mo',
-      cta: 'Choose Professional',
+      cta: 'Contact Sales',
       highlight: true,
       features: ['50 Listings', 'AI Screening', 'Dashboards', 'Automations + RBAC'],
       icon: WorkspacePremiumRounded,
@@ -104,7 +102,6 @@ function JobPortal() {
     {
       name: 'Enterprise',
       desc: 'Unlimited listings, AI matching, white-label branding, premium support',
-      price: 'Custom',
       cta: 'Contact Sales',
       highlight: false,
       features: ['Unlimited Listings', 'AI Matching', 'White-label', '24/7 Priority Support'],
@@ -297,10 +294,8 @@ function JobPortal() {
                     </Stack>
 
                     <Stack direction="row" alignItems="baseline" justifyContent="space-between" sx={{ mt: 1 }}>
-                      <Typography variant="h6" fontWeight={800}>
-                        {plan.price}
-                      </Typography>
                       <Button
+                        href="mailto:support@oppexl.com"
                         variant={plan.highlight ? 'contained' : 'outlined'}
                         color={plan.highlight ? 'primary' : 'inherit'}
                         sx={{ borderRadius: 2, textTransform: 'none', fontWeight: 700 }}

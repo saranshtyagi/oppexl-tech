@@ -38,8 +38,7 @@ function HRMS() {
     {
       name: 'Starter',
       desc: 'Core HR, attendance, and leave management for up to 50 employees',
-      price: 'Free trial',
-      cta: 'Start Free',
+      cta: 'Contact Sales',
       highlight: false,
       features: ['Employee Directory', 'Attendance & Leave', 'Basic Reports', 'Email Support'],
       icon: RocketLaunchRounded,
@@ -48,8 +47,7 @@ function HRMS() {
     {
       name: 'Growth',
       desc: 'Payroll automation, performance tracking, analytics, 24x5 support',
-      price: '₹9,999 / mo',
-      cta: 'Choose Growth',
+      cta: 'Contact Sales',
       highlight: true,
       features: ['Full Payroll Suite', 'Performance & OKRs', 'Advanced Analytics', 'SSO + Role-Based Access'],
       icon: WorkspacePremiumRounded,
@@ -58,7 +56,6 @@ function HRMS() {
     {
       name: 'Enterprise',
       desc: 'All modules, customization, dedicated account manager, 24/7 SLA',
-      price: 'Custom',
       cta: 'Contact Sales',
       highlight: false,
       features: ['All Modules + LMS', 'Custom Workflows', 'Dedicated CSM', '24/7 Priority Support'],
@@ -237,10 +234,8 @@ function HRMS() {
                     </Stack>
 
                     <Stack direction="row" alignItems="baseline" justifyContent="space-between" sx={{ mt: 1 }}>
-                      <Typography variant="h6" fontWeight={800}>
-                        {plan.price}
-                      </Typography>
                       <Button
+                        href="mailto:support@oppexl.com"
                         variant={plan.highlight ? 'contained' : 'outlined'}
                         color={plan.highlight ? 'primary' : 'inherit'}
                         sx={{ borderRadius: 2, textTransform: 'none', fontWeight: 700 }}
