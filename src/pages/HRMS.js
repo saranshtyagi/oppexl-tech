@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Container,
   Typography,
@@ -11,23 +11,45 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 function HRMS() {
-  const [selectedTab, setSelectedTab] = useState('HR Process Automation');
-
-  const workforceFocusAreas = {
+  const workforceFocusAreas = useMemo(() => ({
     'Recruitment Automation': ['Resume Screening', 'Interview Scheduler', 'Offer Letters'],
     'Learning & Growth': ['Onboarding Modules', 'Skill Gap Analysis', 'Gamified LMS'],
     'Performance Management': ['OKR Tracking', 'Continuous Feedback', 'Appraisal Workflows'],
     'Employee Engagement': ['Pulse Surveys', 'Rewards & Recognition', 'Wellness Programs'],
     'Payroll': ['Attendance Tracking', 'Leave Management', 'Payroll Processing']
-  };
+  }), []);
+
+  // Initialize to a valid tab key
+  const [selectedTab, setSelectedTab] = useState(
+    Object.keys(workforceFocusAreas)[0]
+  );
+
+  const tabs = Object.keys(workforceFocusAreas);
+  const currentItems = workforceFocusAreas[selectedTab] ?? [];
+
+  const plans = [
+    {
+      name: 'Starter',
+      desc: 'Core HR, attendance, and leave management for up to 50 employees'
+    },
+    {
+      name: 'Growth',
+      desc: 'Payroll automation, performance tracking, reports, 24x5 support'
+    },
+    {
+      name: 'Enterprise',
+      desc: 'All modules, customization, dedicated account manager, 24/7 SLA'
+    }
+  ];
 
   return (
     <>
-  
       {/* Unified Workforce Section */}
       <Box sx={{ py: 18, bgcolor: '#e6f2fb' }}>
         <Container>
-          <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>Human Resource Management System (HRMS)</Typography>
+          <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>
+            Human Resource Management System (HRMS)
+          </Typography>
           <Typography variant="h4" textAlign="center" fontWeight={500} gutterBottom>
             Streamlined Workforce, Maximum Output
           </Typography>
@@ -36,7 +58,7 @@ function HRMS() {
           </Typography>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 6, gap: 2, flexWrap: 'wrap' }}>
-            {Object.keys(workforceFocusAreas).map((tab) => (
+            {tabs.map((tab) => (
               <Button
                 key={tab}
                 variant={selectedTab === tab ? 'contained' : 'outlined'}
@@ -51,8 +73,8 @@ function HRMS() {
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <Box>
-                {workforceFocusAreas[selectedTab].map((item, index) => (
-                  <Box key={index} sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                {currentItems.map((item) => (
+                  <Box key={item} sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                     <CheckCircleIcon sx={{ color: '#4caf50', mr: 2 }} />
                     <Typography>{item}</Typography>
                   </Box>
@@ -64,7 +86,7 @@ function HRMS() {
                 <img
                   src="/platform-diagram.png"
                   alt="Platform Design"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </Box>
             </Grid>
@@ -77,30 +99,17 @@ function HRMS() {
           </Box>
         </Container>
       </Box>
-      <Box sx={{ height: 64 }} />
-      <Container>
-        
 
+      <Box sx={{ height: 64 }} />
+
+      <Container>
         <Typography variant="h5" sx={{ pb: 3 }}>
           Subscription Plans
         </Typography>
 
         <Grid container spacing={3}>
-          {[
-            {
-              name: 'Starter',
-              desc: 'Core HR, attendance, and leave management for up to 50 employees'
-            },
-            {
-              name: 'Growth',
-              desc: 'Payroll automation, performance tracking, reports, 24x5 support'
-            },
-            {
-              name: 'Enterprise',
-              desc: 'All modules, customization, dedicated account manager, 24/7 SLA'
-            }
-          ].map((plan, index) => (
-            <Grid item xs={12} sm={4} key={index} pb={8}>
+          {plans.map((plan) => (
+            <Grid item xs={12} sm={4} key={plan.name} sx={{ pb: 8 }}>
               <Card sx={{ bgcolor: '#f5f5f5', height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>{plan.name}</Typography>
