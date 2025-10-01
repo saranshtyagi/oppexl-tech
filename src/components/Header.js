@@ -92,27 +92,35 @@ function Header() {
         onMouseLeave={() => setHoveredKey(null)}
       >
         {/* Logo and Brand */}
-        <Box 
-          component={Link} 
-          to="/" 
-          display="flex" 
-          alignItems="center" 
-          gap={0}
-          sx={{ 
-            textDecoration: 'none',
-            cursor: 'pointer',
-            '&:hover': {
-              opacity: 0.8,
-              transition: 'opacity 0.2s ease',
-            },
-          }}
-        >
-          <img src={OppexlLogo} alt="Oppexl Logo" style={{ height: 80, marginRight: 0 }} />
-          <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '1.8rem', color: 'white' }}>
+        <Box display="flex" alignItems="center">
+          <Box 
+            component={Link} 
+            to="/" 
+            sx={{ 
+              textDecoration: 'none',
+              cursor: 'pointer',
+              '&:hover': {
+                opacity: 0.8,
+                transition: 'opacity 0.2s ease',
+              },
+            }}
+          >
+            <img src={OppexlLogo} alt="Oppexl Logo" style={{ height: 60 }} />
+          </Box>
+          <Typography 
+            variant="h6" 
+            sx={{ 
+              fontWeight: 'bold', 
+              fontSize: '1.8rem', 
+              color: 'white', 
+              ml: 1  
+            }}
+          >
             Oppexl
           </Typography>
         </Box>
 
+        
         {/* Navigation */}
         <Box display="flex" alignItems="center" gap={3} position="relative">
 
