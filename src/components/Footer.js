@@ -31,7 +31,7 @@ function Footer() {
               <Email fontSize="small" sx={{ mr: 1 }} />
               <Typography variant="body2">
                 <Link href="mailto:support@oppexl.com" color="inherit" underline="hover">
-                  hr@oppexl.com
+                  support@oppexl.com
                 </Link>
               </Typography>
             </Box>
