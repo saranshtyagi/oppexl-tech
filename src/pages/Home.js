@@ -90,6 +90,13 @@ function Home() {
       snippet: 'Discover how to align performance systems with evolving business goals.',
       link: '/insights/performance-management',
     },
+    {
+      id: 'social-audits', 
+      title: 'Internal Social Audits',
+      image: '/social-audits.png',
+      snippet: 'The Hidden Engine of Business Transformation', 
+      link: '/insights/social-audits'
+    }
   ];
 
   // Ref for video (native loop, no manual handlers needed)
