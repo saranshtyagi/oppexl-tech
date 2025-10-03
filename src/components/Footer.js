@@ -9,7 +9,7 @@ function Footer() {
     <Box sx={{ bgcolor: '#002b54', color: 'white', px: 4, py: 6 }}>
       <Grid container spacing={4}>
         {/* Logo & About */}
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={3}>
           <Box display="flex" flexDirection="column" alignItems="center" textAlign="center">
             <img
               src={OppexlLogo}
@@ -60,7 +60,7 @@ function Footer() {
         </Grid>
 
         {/* Products */}
-        <Grid item xs = {6} md = {2}>
+        <Grid item xs = {12} sm={6} md = {3}>
           <Typography variant='h6' gutterBottom>Products</Typography>
           {[
             {label: 'HRMS', path: "/products/hrms"}, 
@@ -81,7 +81,7 @@ function Footer() {
         </Grid>
 
         {/* Services */}
-        <Grid item xs={6} md={2}>
+        <Grid item xs = {12} sm={6} md = {3}>
           <Typography variant="h6" gutterBottom>Services</Typography>
           {[
             {label: 'Merger & Acquistions', path: "/services/merger-acquisitions"}, 
@@ -106,17 +106,17 @@ function Footer() {
         </Grid>
 
         {/* Resources */}
-        <Grid item xs={6} md={2}>
+        {/* <Grid item xs={6} md={2}>
           <Typography variant="h6" gutterBottom>Resources</Typography>
           {['Blog', 'Case Studies', 'Events', 'Webinars'].map((item) => (
             <Typography key={item} variant="body2">
               <Link href="#" underline="hover" color="inherit">{item}</Link>
             </Typography>
           ))}
-        </Grid>
+        </Grid> */}
 
         {/* Company */}
-        <Grid item xs={6} md={2}>
+        <Grid item xs = {12} sm={6} md = {3}>
           <Typography variant="h6" gutterBottom>Company</Typography>
           {[
             {label: 'About Us', path: '/about'},
