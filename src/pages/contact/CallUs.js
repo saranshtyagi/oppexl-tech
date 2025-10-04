@@ -1,7 +1,3 @@
-// ===============================
-// 📄 CallUs.js
-// ===============================
-
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { Phone } from '@mui/icons-material';
@@ -21,7 +17,7 @@ function CallUs() {
           <Box display="flex" alignItems="center" gap={2} mb={3}>
             <Phone fontSize="large" color="secondary" />
             <Typography variant="h6" fontWeight={500}>
-              +91 8168358488
+              +91 7206215762
             </Typography>
           </Box>
 

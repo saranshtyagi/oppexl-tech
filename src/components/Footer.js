@@ -209,11 +209,11 @@ function Footer() {
               <Phone fontSize="small" sx={{ mr: 1 }} />
               <Typography variant="body2">
                 <Link
-                  href="tel:+918168358488"
+                  href="tel:+917206215762"
                   color="inherit"
                   underline="hover"
                 >
-                  +91 8168358488
+                  +91 7206215762
                 </Link>
               </Typography>
             </Box>

@@ -8,7 +8,7 @@ const MotionPaper = motion(Paper);
 
 function ContactUs() {
   const address = 'Welldone Tech Park, Sohna Road, Sector 48, Gurugram, Haryana 122018';
-  // Public consumer URL variant (no API key). Uses q= for address search.
+  
   const publicMapSrc =
     'https://www.google.com/maps?q=' + encodeURIComponent(address) + '&output=embed';
 
@@ -35,7 +35,7 @@ function ContactUs() {
           >
             <Stack direction="row" spacing={2} alignItems="center">
               <Phone fontSize="large" color="secondary" />
-              <Typography variant="h6" fontWeight={600}>+91 8168358488</Typography>
+              <Typography variant="h6" fontWeight={600}>+91 7206215762</Typography>
             </Stack>
             <Typography variant="body1" sx={{ mt: 2 }}>
               For real-time assistance, feature queries, or to speak with a solution specialist, call during business hours.
