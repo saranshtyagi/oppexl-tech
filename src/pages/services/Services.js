@@ -10,13 +10,14 @@ import {
 } from "@mui/material";
 import CardActionArea from "@mui/material/CardActionArea";
 import {
-  Policy,               // Audits & Compliance
-  TrendingUp,           // M&A
-  Payments,             // Compensation & Benefits
-  ManageAccounts,       // Talent Management
-  RequestQuote,         // Payroll
-  Gavel,                // Government Advisory
-  Work,                 // Recruitment / HR Tech
+  Policy,               
+  TrendingUp,           
+  Payments,             
+  ManageAccounts,       
+  RequestQuote,         
+  Gavel,                
+  Work, 
+  VerifiedUser                
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -81,6 +82,14 @@ function Services() {
       path: "/services/recruitment",
       icon: Work,
       color: "primary",
+    },
+    {
+      title: "Background Verification",
+      description:
+        "Comprehensive background verification services for both blue-collar and white-collar employees to ensure trust, safety, and compliance. We verify identity, employment history, criminal records, and education credentials with precision and confidentiality.",
+      path: "/services/background-verification",
+      icon: VerifiedUser,  
+      color: "secondary",
     },
   ];
 
