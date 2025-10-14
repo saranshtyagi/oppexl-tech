@@ -51,6 +51,7 @@ function Header() {
         { label: 'Recruitment', path: '/services/recruitment' },
         { label: 'Payroll', path: '/services/payroll' },
         { label: 'Government Advisory', path: '/services/government-advisory' },
+        { label: 'Background Verification', path: '/services/background-verification' },
       ],
     },
     {

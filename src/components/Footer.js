@@ -286,6 +286,10 @@ function Footer() {
                   label: "Government Advisory",
                   path: "/services/government-advisory",
                 },
+                {
+                  label: "Background Verification",
+                  path: "/services/background-verification",
+                },
               ].map((item) => (
                 <Typography key={item.label} variant="body2">
                   <Link
