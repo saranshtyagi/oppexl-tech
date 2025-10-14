@@ -45,6 +45,7 @@ import CompensationBenefits from './pages/services/CompensationBenefits';
 import Recruitment from './pages/services/Recruitment';
 import Payroll from './pages/services/Payroll';
 import GovernmentAdvisory from './pages/services/GovernmentAdvisory';
+import BackgroundVerification from './pages/services/BackgroundVerification';
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
         <Route path="/services/recruitment" element={<Recruitment />} />
         <Route path="/services/payroll" element={<Payroll />} />
         <Route path="/services/government-advisory" element={<GovernmentAdvisory />} />
+        <Route path="/services/background-verification" element={<BackgroundVerification />} />
 
         {/* Success Stories */}
         <Route path="/success-stories" element={<SuccessStories />} />
